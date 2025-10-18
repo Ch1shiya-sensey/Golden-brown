@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" defer src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<div id="container"></div>
+<div class="glow"></div>
+<div id="patternName">ARISE</div>
+<div id="instructions">My imagination<br>Click/Tap to change!</div>
+
+
+    <style>
+        /* Invisible tugma, faqat click qilish uchun joy */
+        #musicButton {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0; /* butunlay ko‘rinmas */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Invisible button -->
+    <button id="musicButton"></button>
+
+    <!-- Invisible audio -->
+    <audio id="bgMusic" loop>
+        <source src="The_Stranglers_Golden_Brown_Ending_looped_+_Slowed_Reverb.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const musicButton = document.getElementById('musicButton');
+        const bgMusic = document.getElementById('bgMusic');
+
+        musicButton.addEventListener('click', () => {
+            bgMusic.play(); // foydalanuvchi click qilganda musiqa boshlanadi
+            musicButton.style.display = 'none'; // tugma yo'qoladi
+        });
+    </script>
+
+
+
+</body>
+</html>
